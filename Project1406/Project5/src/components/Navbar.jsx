@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
-  const { user, login, logout } = useAuth();
+  const { user, logout, setShowLoginModal } = useAuth();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 shadow-sm">
       <NavLink className="navbar-brand fw-bold" to="/">RentalApp</NavLink>
 
       <div className="ms-auto d-flex align-items-center gap-3">
@@ -34,8 +34,15 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <button className="btn btn-outline-light btn-sm" onClick={login}>Login</button>
-            <NavLink to="/register" className="btn btn-outline-warning btn-sm">Register</NavLink>
+            <button 
+              className="btn btn-outline-light btn-sm"
+              onClick={() => setShowLoginModal(true)}
+            >
+              Login
+            </button>
+            <NavLink to="/register" className="btn btn-outline-warning btn-sm">
+              Register
+            </NavLink>
           </>
         )}
       </div>

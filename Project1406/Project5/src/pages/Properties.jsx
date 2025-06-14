@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchProperties } from '../api/api';
-import 'bootstrap/dist/css/bootstrap.min.css'; // ✅ Make sure this is in App.jsx or index.js once
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles.css';
 
 export default function Home() {
@@ -32,19 +32,26 @@ export default function Home() {
         {properties.length > 0 ? (
           properties.map((property) => (
             <div className="col-md-4 mb-4" key={property.id}>
-              <div className="card h-100 border-0 shadow-lg rounded">
-                <img
-                  src={property.image}
-                  alt={property.title}
-                  className="card-img-top"
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
+              <div className="card h-100 border-0 shadow rounded-4 overflow-hidden">
+                <div style={{ overflow: 'hidden' }}>
+                  <img
+                    src={property.image}
+                    alt={property.title}
+                    className="img-fluid"
+                    style={{
+                      height: '220px',
+                      width: '100%',
+                      objectFit: 'cover',
+                      borderBottom: '1px solid #ddd',
+                    }}
+                  />
+                </div>
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{property.title}</h5>
                   <p className="card-text text-muted small">
-                    This property offers modern amenities and is located in a peaceful neighborhood.
+                    Explore this stunning property featuring elegant interiors, spacious rooms, and excellent connectivity.
                   </p>
-                  <Link to={`/properties/${property.id}`} className="btn btn-primary mt-auto">
+                  <Link to={`/properties/${property.id}`} className="btn btn-warning mt-auto">
                     View Details
                   </Link>
                 </div>

@@ -39,36 +39,28 @@ const PropertyDetail = () => {
 
   return (
     <div className="container my-5">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="property-image shadow-lg rounded mb-4">
-            <img
-              src={property.image}
-              alt={property.title}
-              className="img-fluid rounded w-100"
-            />
-          </div>
-        </div>
+      <div className="property-image text-center mb-4">
+        <img src={property.image} alt={property.title} className="img-fluid rounded shadow" />
       </div>
 
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="property-info bg-white p-4 shadow rounded">
-            <h2 className="mb-3">{property.title}</h2>
-            <p className="text-muted">
-              This elegant property offers modern comfort in a great location.
-            </p>
-            <ul className="list-group list-group-flush mb-3">
-              <li className="list-group-item">Free Wi-Fi</li>
-              <li className="list-group-item">Fully Furnished</li>
-              <li className="list-group-item">Near Public Transport</li>
-              <li className="list-group-item">Safe Neighborhood</li>
-            </ul>
-            <button className="btn btn-success btn-lg w-100" onClick={handleBooking}>
-              Book Now
-            </button>
-          </div>
-        </div>
+      <div className="property-info bg-white p-4 shadow rounded">
+        <h2 className="mb-3 text-center">{property.title}</h2>
+        <p className="text-muted text-center">
+          Discover comfort and convenience with this beautifully designed property, perfect for both relaxation and daily living.
+        </p>
+
+        <ul className="list-group list-group-flush mb-4">
+          <li className="list-group-item">🌟 Air Conditioning & Heating</li>
+          <li className="list-group-item">🛏️ Spacious Bedrooms & Modern Kitchen</li>
+          <li className="list-group-item">🛡️ 24/7 Security and Gated Access</li>
+          <li className="list-group-item">🚆 Excellent Connectivity to City Center</li>
+        </ul>
+<div className='text-center'>
+  
+        <button className="btn btn-success btn-lg w-50" onClick={handleBooking}>
+          Book Now
+        </button>
+</div>
       </div>
 
       {showModal && <BookingModal onClose={closeModal} />}
