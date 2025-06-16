@@ -7,16 +7,6 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString(undefined, options);
 }
 
-const getRandomAvatar = (name) => {
-  const hash = name.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
-  const randomSeed = hash % 1000; 
-  
-  const styles = ['identicon', 'avataaars', 'bottts', 'micah', 'pixel-art'];
-  const randomStyle = styles[hash % styles.length];
-  
-  return `https://api.dicebear.com/7.x/${randomStyle}/svg?seed=${randomSeed}`;
-};
-
 export default function TicketList() {
   const [tickets, setTickets] = useState([]);
 
@@ -46,7 +36,10 @@ export default function TicketList() {
       </h1>
 
       {tickets.length === 0 ? (
-        <div className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: '200px' }}>
+        <div
+          className="d-flex flex-column align-items-center justify-content-center"
+          style={{ minHeight: '200px' }}
+        >
           <div className="spinner-border text-primary" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
@@ -61,13 +54,15 @@ export default function TicketList() {
                   <div className="card-header bg-primary text-white">
                     <div className="d-flex justify-content-between align-items-center">
                       <h5 className="mb-0 text-truncate w-75">{ticket.subject}</h5>
-                      <span className={`badge bg-${
-                        ticket.status === 'Open'
-                          ? 'success'
-                          : ticket.status === 'Pending'
-                          ? 'warning'
-                          : 'secondary'
-                      }`}>
+                      <span
+                        className={`badge bg-${
+                          ticket.status === 'Open'
+                            ? 'success'
+                            : ticket.status === 'Pending'
+                            ? 'warning'
+                            : 'secondary'
+                        }`}
+                      >
                         {ticket.status}
                       </span>
                     </div>
@@ -86,13 +81,7 @@ export default function TicketList() {
                     </p>
                     <p className="mb-2 d-flex align-items-center">
                       <i className="bi bi-person-badge-fill text-secondary me-2"></i>
-                      <strong>Assigned To:</strong> 
-                      <img 
-                        src={getRandomAvatar(ticket.assignedTo)} 
-                        alt={ticket.assignedTo}
-                        className="rounded-circle ms-2"
-                        style={{ width: '24px', height: '24px' }}
-                      />
+                      <strong>Assigned To:</strong>
                       <span className="ms-1">{ticket.assignedTo}</span>
                     </p>
                     <p className="text-muted mb-0">
