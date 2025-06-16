@@ -7,6 +7,7 @@ import withRoleGuard from './hoc/withRoleGuard';
 import Navbar from './components/Navbar';
 import LoginModal from './components/LoginModal';
 import './App.css';
+import Home from './pages/HomePage';
 
 const ProtectedTicketDetail = withRoleGuard(TicketDetail, ['agent', 'admin']);
 
@@ -27,12 +28,11 @@ function AppWrapper() {
       />
 
       <Routes>
-        
-        <Route path="/home" element={<Navigate to="/home" />} />
-        <Route path="/" element={<Navigate to="/tickets" />} />
-        <Route path="/tickets" element={<TicketList />} />
-        <Route path="/tickets/:ticketId" element={<ProtectedTicketDetail />} />
-      </Routes>
+  <Route path="/" element={<Navigate to="/home" />} />
+  <Route path="/home" element={<Home />} />
+  <Route path="/tickets" element={<TicketList />} />
+  <Route path="/tickets/:ticketId" element={<ProtectedTicketDetail />} />
+</Routes>
     </>
   );
 }

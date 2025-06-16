@@ -1,32 +1,32 @@
 export const mockTickets = [
   {
-    id: '1',
+    id: 'TCK-2025-001',
     subject: 'App crashes on startup',
     status: 'Open',
     priority: 'Urgent', // was 'High'
     createdAt: '2025-06-13T09:15:00Z',
     customer: 'Emily Carter',
-    assignedTo: 'Agent Ron',
+    assignedTo: 'Agent Dharun',
     messages: [
       { sender: 'customer', content: 'The app crashes immediately after I open it.' },
       { sender: 'agent', content: 'Thanks for reporting. We’re investigating the issue.' },
     ],
   },
   {
-    id: '2',
+    id: 'TCK-2025-002',
     subject: 'Unable to update profile',
     status: 'Pending',
     priority: 'Normal', // was 'Medium'
     createdAt: '2025-06-11T14:40:00Z',
     customer: 'Frank Harris',
-    assignedTo: 'Agent Mia',
+    assignedTo: 'Agent Vishwa',
     messages: [
       { sender: 'customer', content: 'My profile picture and info are not saving.' },
       { sender: 'agent', content: 'Can you try from a different browser or device?' },
     ],
   },
   {
-    id: '3',
+    id: 'TCK-2025-003',
     subject: 'Email notifications not received',
     status: 'Closed',
     priority: 'Minor', // was 'Low'
@@ -39,20 +39,20 @@ export const mockTickets = [
     ],
   },
   {
-    id: '4',
+    id: 'TCK-2025-004',
     subject: 'Suggestion: Add file upload feature',
     status: 'Open',
     priority: 'Minor', // was 'Low'
     createdAt: '2025-06-14T11:20:00Z',
     customer: 'Henry Thompson',
-    assignedTo: 'Agent Mia',
+    assignedTo: 'Agent sugan',
     messages: [
       { sender: 'customer', content: 'It would be great to upload documents in tickets.' },
       { sender: 'agent', content: 'Thanks for the suggestion! We’ve noted it for review.' },
     ],
   },
   {
-    id: '5',
+    id: 'TCK-2025-005',
     subject: 'Incorrect billing amount',
     status: 'Pending',
     priority: 'Urgent', // was 'High'
@@ -65,13 +65,13 @@ export const mockTickets = [
     ],
   },
   {
-    id: '6',
+    id: 'TCK-2025-006',
     subject: 'Cannot reset password',
     status: 'Open',
     priority: 'Normal', 
     createdAt: '2025-06-14T13:50:00Z',
     customer: 'Jason Kim',
-    assignedTo: 'Agent Mia',
+    assignedTo: 'Agent sugan',
     messages: [
       { sender: 'customer', content: 'The password reset link is not working.' },
       { sender: 'agent', content: 'I’ve sent a new link. Please check your email.' },

@@ -12,9 +12,9 @@ export default function Navbar({ setShowLogin }) {
 
         <div className="collapse navbar-collapse justify-content-end">
           <ul className="navbar-nav gap-3">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-            </li>
+           <li className="nav-item">
+  <NavLink className="nav-link" to="/home">Home</NavLink>
+</li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/tickets">Tickets</NavLink>
             </li>
