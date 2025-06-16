@@ -7,6 +7,16 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString(undefined, options);
 }
 
+const getRandomAvatar = (name) => {
+  const hash = name.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
+  const randomSeed = hash % 1000; 
+  
+  const styles = ['identicon', 'avataaars', 'bottts', 'micah', 'pixel-art'];
+  const randomStyle = styles[hash % styles.length];
+  
+  return `https://api.dicebear.com/7.x/${randomStyle}/svg?seed=${randomSeed}`;
+};
+
 export default function TicketList() {
   const [tickets, setTickets] = useState([]);
 
@@ -32,7 +42,7 @@ export default function TicketList() {
   return (
     <div className="container my-5">
       <h1 className="text-center text-primary mb-5">
-        <i className="bi bi-ticket-detailed-fill me-2"></i>Support Tickets
+        <i className="bi bi-ticket-detailed-fill me-2"></i>Tickets
       </h1>
 
       {tickets.length === 0 ? (
@@ -74,9 +84,16 @@ export default function TicketList() {
                         {ticket.priority}
                       </span>
                     </p>
-                    <p className="mb-2">
+                    <p className="mb-2 d-flex align-items-center">
                       <i className="bi bi-person-badge-fill text-secondary me-2"></i>
-                      <strong>Assigned To:</strong> {ticket.assignedTo}
+                      <strong>Assigned To:</strong> 
+                      <img 
+                        src={getRandomAvatar(ticket.assignedTo)} 
+                        alt={ticket.assignedTo}
+                        className="rounded-circle ms-2"
+                        style={{ width: '24px', height: '24px' }}
+                      />
+                      <span className="ms-1">{ticket.assignedTo}</span>
                     </p>
                     <p className="text-muted mb-0">
                       <i className="bi bi-clock me-2"></i>
