@@ -6,23 +6,22 @@ export const mockTickets = [
     priority: 'Urgent', // was 'High'
     createdAt: '2025-06-13T09:15:00Z',
     customer: 'Emily Carter',
-    assignedTo: 'Agent Dharun',
+    assignedTo: 'Agent Sugan',
     messages: [
       { sender: 'customer', content: 'The app crashes immediately after I open it.' },
-      { sender: 'agent', content: 'Thanks for reporting. We’re investigating the issue.' },
     ],
   },
   {
     id: 'TCK-2025-002',
     subject: 'Unable to update profile',
     status: 'Pending',
-    priority: 'Normal', // was 'Medium'
+    priority: 'Normal',
     createdAt: '2025-06-11T14:40:00Z',
     customer: 'Frank Harris',
     assignedTo: 'Agent Vishwa',
     messages: [
       { sender: 'customer', content: 'My profile picture and info are not saving.' },
-      { sender: 'agent', content: 'Can you try from a different browser or device?' },
+      { sender: 'Agent Vishwa', content: 'Can you try from a different browser or device?' },
     ],
   },
   {
@@ -35,7 +34,7 @@ export const mockTickets = [
     assignedTo: 'Agent Ron',
     messages: [
       { sender: 'customer', content: 'I’m not getting any notification emails.' },
-      { sender: 'agent', content: 'We resolved the mail server delay. It should work now.' },
+      { sender: 'Agent Ron', content: 'We resolved the mail server delay. It should work now.' },
     ],
   },
   {
@@ -48,7 +47,6 @@ export const mockTickets = [
     assignedTo: 'Agent sugan',
     messages: [
       { sender: 'customer', content: 'It would be great to upload documents in tickets.' },
-      { sender: 'agent', content: 'Thanks for the suggestion! We’ve noted it for review.' },
     ],
   },
   {
@@ -61,7 +59,7 @@ export const mockTickets = [
     assignedTo: 'Agent Ron',
     messages: [
       { sender: 'customer', content: 'I was overcharged on my last invoice.' },
-      { sender: 'agent', content: 'We’re verifying your billing history. Will update soon.' },
+      { sender: 'Agent Ron', content: 'We’re verifying your billing history. Will update soon.' },
     ],
   },
   {
@@ -71,10 +69,9 @@ export const mockTickets = [
     priority: 'Normal', 
     createdAt: '2025-06-14T13:50:00Z',
     customer: 'Jason Kim',
-    assignedTo: 'Agent sugan',
+    assignedTo: 'Agent Dharun',
     messages: [
       { sender: 'customer', content: 'The password reset link is not working.' },
-      { sender: 'agent', content: 'I’ve sent a new link. Please check your email.' },
     ],
   },
 ];
